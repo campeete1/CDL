@@ -1,0 +1,31 @@
+
+.proposal-contanier {
+    width: 100%;
+    margin-top: 50px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.title-card{
+    max-width: 83vw;
+    margin-bottom: 25px;
+}
+.back-btn > a:nth-child(1) {
+    text-decoration: none;
+}
+.back-btn a:hover{
+    color: #C7A7D6;
+}
+.back-btn img:hover{
+    color: #C7A7D6;
+}
+.back-btn{
+    margin-bottom: 10px;
+}
+@media only screen and (max-width:1025px){
+    .title-card{
+        max-width: 81vw;
+    }
+    .proposal-contanier{
+        margin-top: 60px;
+    }
+}

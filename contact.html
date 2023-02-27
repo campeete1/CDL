@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Cameron Digital Labs</title>
+    <link rel="shortcut icon" href="https://assets.cammy.dev/cameron/assets/cameron/cdl-2ndlogomark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="/home.html">
+                <img src="/assets/cdl-2ndlogomark.png" class="logo">  
+            </a>
+             <nav>
+                <ul id="menuList">
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/docs.html">Docs</a></li>
+                    <a href="/projects.html">
+                        <button>Projects</button>
+                    </a>
+                </ul>
+            </nav>
+            <img src="https://assets.cammy.dev/camcares/icons/menu%20bar.png" class="menu-icon" onclick="togglemenu()">
+        </div>
+<div class="inquire-box">
+    <h1>Submit Inquiry</h1>
+    <form onsubmit="sendEmail(); reset(); return false;">
+        <div class="input-group">
+            <input type="text" id="name" required>
+            <label>Name</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="email" required>
+            <label>Email</label>
+        </div>
+        <div class="input-group">
+            <textarea id="message" rows="4" required ></textarea>
+            <label>How can I help?</label>
+        </div>
+        <div class="secondary-btn">
+            <a href="/submit-successfully">
+                <button class="secondary-btn">Submit</button>
+            </a>
+        </div>
+    </form>
+</div>
+            <br>
+    <footer>
+        <div class="footer">
+            <a href="/">
+                <img src="/assets/cdl-2ndlogomark.png" class="footer-logo">  
+            </a>
+             <div class="footer-nav">
+                <ul>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/about">Contact</a></li>
+                    <li><a href="/contact">Projects</a></li>
+                    <li><a href="/initiatives">Docs</a></li>
+                </ul>
+             </div>
+    </footer>
+    </div>
+<script>
+    var menuList = document.getElementById("menuList");
+
+    menuList.style.maxHeight = "0px";
+
+    function togglemenu(){
+
+        if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "150px";
+            }
+        else
+            {
+                menuList.style.maxHeight = "0px"
+            }
+    }
+</script>
+<script>src="https://smtpjs.com/v3/smtp.js"</script>
+<script>
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "username",
+            Password : "password",
+            To : 'them@website.com',
+            From : "you@isp.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+        );
+    }
+</script>
+</body>
+</html>
